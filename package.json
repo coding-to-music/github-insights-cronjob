@@ -1,0 +1,32 @@
+{
+  "name": "insights-cronjob",
+  "version": "1.0.0",
+  "description": "cronjob for github insights related to softmaple.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoftMaple/insights-cronjob.git"
+  },
+  "keywords": [
+    "github-insights",
+    "github-api"
+  ],
+  "author": "Yadong Zhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SoftMaple/insights-cronjob/issues"
+  },
+  "homepage": "https://github.com/SoftMaple/insights-cronjob#readme",
+  "dependencies": {
+    "@octokit/core": "^3.5.1",
+    "dotenv": "^10.0.0",
+    "mongoose": "^6.1.2",
+    "toad-scheduler": "^1.6.0"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
