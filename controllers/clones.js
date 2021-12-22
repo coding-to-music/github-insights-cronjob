@@ -16,6 +16,7 @@ exports.getClones = async (owner, repo) => {
       const shouldUpdate = isTodayOrNot(latestData.timestamp);
       if (shouldUpdate) {
         await Clone.create({ name: repo, ...latestData });
+        console.log("getClones: ", repo);
       }
     } else {
       throw new Error("Error fetching clones: ", status);

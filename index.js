@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { ToadScheduler, SimpleIntervalJob, AsyncTask } = require('toad-scheduler')
 
 require('dotenv').config();
 
@@ -35,24 +34,18 @@ const runCronJob = async () => {
 }
 
 async function main() {
+  // 30s
+  const ms = 30 * 1000;
+
   try {
     await runCronJob();
+    // stop cron job
+    setTimeout(() => {
+      mongoose.disconnect();
+    }, ms);
   } catch (error) {
     console.error(error.message);
   }
 }
 
-// for development
-// main();
-/**
- * call github api per day.
- */
-const scheduler = new ToadScheduler()
-
-const task = new AsyncTask('github api task', () => main(), (error) => console.error(error.message));
-const job = new SimpleIntervalJob({ days: 1, }, task)
-
-scheduler.addSimpleIntervalJob(job)
-
-// when stopping your app
-// scheduler.stop()
+main();

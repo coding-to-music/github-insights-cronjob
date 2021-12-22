@@ -16,6 +16,7 @@ exports.getViews = async (owner, repo) => {
       const shouldUpdate = isTodayOrNot(latestData.timestamp);
       if (shouldUpdate) {
         await View.create({ name: repo, ...latestData });
+        console.log("getViews: ", repo);
       }
     } else {
       throw new Error("Error fetching views: ", status);
