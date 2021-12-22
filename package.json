@@ -4,7 +4,7 @@
   "description": "cronjob for github insights related to softmaple.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -22,11 +22,15 @@
   "homepage": "https://github.com/SoftMaple/insights-cronjob#readme",
   "dependencies": {
     "@octokit/core": "^3.5.1",
+    "dayjs": "^1.10.7",
     "dotenv": "^10.0.0",
     "mongoose": "^6.1.2",
     "toad-scheduler": "^1.6.0"
   },
   "engines": {
     "node": "14.x"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

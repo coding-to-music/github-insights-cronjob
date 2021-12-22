@@ -6,13 +6,18 @@ const viewSchema = new Schema({
     required: true,
     type: String,
   },
-  count: Number,
-  uniques: Number,
-  views: [{
-    timestamp: Date,
-    count: Number,
-    uniques: Number
-  }]
+  timestamp: {
+    type: String,
+    default: new Date().toISOString(),
+  },
+  count: {
+    type: Number,
+    default: 0,
+  },
+  uniques: {
+    type: Number,
+    default: 0,
+  },
 }, {timestamps: true});
 
 module.exports = model("View", viewSchema);
