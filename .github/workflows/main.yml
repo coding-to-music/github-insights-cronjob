@@ -21,7 +21,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: install dependencies
-        run: npm ci
+        run: npm i
       - name: start cron
         run: |
             touch .env
