@@ -6,7 +6,7 @@ name: cron
 on:
   workflow_dispatch:
   schedule:
-    # Runs at 12am UTC
+    # Runs at 1am UTC
     - cron: "0 1 * * *"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel

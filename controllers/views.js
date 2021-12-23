@@ -1,6 +1,6 @@
 const View = require("../models/View");
 const callOctokit = require("../utils/call-octokit");
-const isTodayOrNot = require("../utils/is-today");
+const isLastDay = require("../utils/is-last-day");
 
 exports.getViews = async (owner, repo) => {
   try {
@@ -13,7 +13,7 @@ exports.getViews = async (owner, repo) => {
     if (status === 200) {
       const { views } = data;
       const latestData = views[views.length - 1];
-      const shouldUpdate = isTodayOrNot(latestData.timestamp);
+      const shouldUpdate = isLastDay(latestData.timestamp);
       if (shouldUpdate) {
         await View.create({ name: repo, ...latestData });
         console.log("getViews: ", repo);
