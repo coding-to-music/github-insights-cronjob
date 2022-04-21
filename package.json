@@ -1,10 +1,15 @@
 {
-  "name": "insights-cronjob",
+  "name": "github-insights-cronjob",
   "version": "1.0.0",
   "description": "cronjob for github insights related to softmaple.",
   "main": "index.js",
+  "cacheDirectories": [
+    "node_modules"
+  ],
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "install": "npm install",
+    "deploy": "git add . && git commit -m Heroku && git push && git push heroku && heroku logs --tail --remote heroku"
   },
   "repository": {
     "type": "git",
@@ -27,6 +32,6 @@
     "mongoose": "^6.1.2"
   },
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   }
 }
