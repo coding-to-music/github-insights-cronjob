@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "start": "node index.js",
-    "install": "npm install",
+    "badinstall": "npm install",
     "deploy": "git add . && git commit -m Heroku && git push && git push heroku && heroku logs --tail --remote heroku"
   },
   "repository": {
