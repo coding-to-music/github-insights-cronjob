@@ -4,9 +4,7 @@
 
 https://github.com/coding-to-music/github-insights-cronjob
 
-https://github-insights-cronjob.herokuapp.com
-
-https://github-insights-cronjob.onrender.com
+https://github-insights-cronjob.vercel.app/
 
 by SoftMaple https://github.com/softmaple
 

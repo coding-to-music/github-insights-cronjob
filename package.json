@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "badinstall": "npm install",
-    "deploy": "git add . && git commit -m Heroku && git push && git push heroku && heroku logs --tail --remote heroku"
+    "deploy": "git add . && git commit -m Build && git push"
   },
   "repository": {
     "type": "git",
