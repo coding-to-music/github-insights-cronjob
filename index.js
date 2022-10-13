@@ -19,9 +19,9 @@ const connectDB = async () => {
 
 const jobs = [getClones, getViews];
 const repos = [
-  { owner: "zhyd1997", repo: "Eorg" },
-  { owner: "SoftMaple", repo: "docs" },
-  { owner: "SoftMaple", repo: "Editor" },
+  { owner: "coding-to-music", repo: "coding-to-music" },
+  { owner: "coding-to-music", repo: "sass-mern-image-uploader" },
+  { owner: "coding-to-music", repo: "coding-to-music.github.io" },
 ];
 
 const runCronJob = async () => {
