@@ -5,7 +5,7 @@ const isLastDay = require("../utils/is-last-day");
 exports.getForks = async (owner, repo) => {
   try {
     const { status, data } = await callOctokit(
-      "GET /repos/{owner}/{repo}/forks_count",
+      "GET /repos/{owner}/{repo}/forks",
       owner,
       repo
     );
@@ -22,6 +22,7 @@ exports.getForks = async (owner, repo) => {
       throw new Error("Error fetching forks: ", status);
     }
   } catch (error) {
-    console.error(error.message);
+    // console.error(error.message);
+    console.log("getForks: ", error.message, repo);
   }
 };

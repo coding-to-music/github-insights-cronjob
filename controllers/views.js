@@ -5,8 +5,8 @@ const isLastDay = require("../utils/is-last-day");
 exports.getViews = async (owner, repo) => {
   try {
     const { status, data } = await callOctokit(
-      "GET /repos/{owner}/{repo}/traffic/views", 
-      owner, 
+      "GET /repos/{owner}/{repo}/traffic/views",
+      owner,
       repo
     );
 
@@ -22,6 +22,7 @@ exports.getViews = async (owner, repo) => {
       throw new Error("Error fetching views: ", status);
     }
   } catch (error) {
-    console.error(error.message);
+    // console.error(error.message);
+    console.log("getViews: ", error.message, repo);
   }
-}
+};

@@ -22,6 +22,7 @@ exports.getStars = async (owner, repo) => {
       throw new Error("Error fetching stars: ", status);
     }
   } catch (error) {
-    console.error(error.message);
+    // console.error(error.message);
+    console.log("getStars: ", error.message, repo);
   }
 };

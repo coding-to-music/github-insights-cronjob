@@ -58,6 +58,17 @@ gh api \
   /repos/coding-to-music/coding-to-music/traffic/views
 ```
 
+## Get a repository
+
+https://docs.github.com/en/rest/repos/repos#get-a-repository
+
+```
+curl \
+  -H "Accept: application/vnd.github+json" \
+  -H "Authorization: Bearer <YOUR-TOKEN>" \
+  https://api.github.com/repos/OWNER/REPO
+```
+
 ## Deploying to Render
 
 This plugin will extract info from Heroku and put it into a Docker file.

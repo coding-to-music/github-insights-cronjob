@@ -5,8 +5,8 @@ const isLastDay = require("../utils/is-last-day");
 exports.getClones = async (owner, repo) => {
   try {
     const { status, data } = await callOctokit(
-      "GET /repos/{owner}/{repo}/traffic/clones", 
-      owner, 
+      "GET /repos/{owner}/{repo}/traffic/clones",
+      owner,
       repo
     );
 
@@ -22,6 +22,7 @@ exports.getClones = async (owner, repo) => {
       throw new Error("Error fetching clones: ", status);
     }
   } catch (error) {
-    console.error(error.message);
+    // console.error(error.message);
+    console.log("getClones: ", error.message, repo);
   }
-}
+};
