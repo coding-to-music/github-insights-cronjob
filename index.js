@@ -4,6 +4,8 @@ require("dotenv").config();
 
 const { getClones } = require("./controllers/clones");
 const { getViews } = require("./controllers/views");
+const { getStars } = require("./controllers/stars");
+const { getForks } = require("./controllers/forks");
 
 const uri = process.env.MONGODB_URI;
 
@@ -17,7 +19,7 @@ const connectDB = async () => {
   }
 };
 
-const jobs = [getClones, getViews];
+const jobs = [getClones, getViews, getStars, getForks];
 const repos = [
   { owner: "coding-to-music", repo: "nestjs-prisma-multi-database" },
   {
