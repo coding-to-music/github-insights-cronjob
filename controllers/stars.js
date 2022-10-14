@@ -13,6 +13,9 @@ exports.getStars = async (owner, repo) => {
     if (status === 200) {
       const { stars } = data;
       const latestData = stars[stars.length - 1];
+
+      console.log("getStars: ", stars, latestData);
+
       const shouldUpdate = isLastDay(latestData.timestamp);
       if (shouldUpdate) {
         await Star.create({ name: repo, ...latestData });
