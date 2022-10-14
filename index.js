@@ -19,6 +19,26 @@ const connectDB = async () => {
 
 const jobs = [getClones, getViews];
 const repos = [
+  { owner: "coding-to-music", repo: "nestjs-prisma-multi-database" },
+  {
+    owner: "coding-to-music",
+    repo: "grafana-nginx-prometheus-postgres-node-exporter-jmx-cadvisor",
+  },
+  {
+    owner: "coding-to-music",
+    repo: "tempo-otel-open-telemetry-loki-prometheus-grafana",
+  },
+  {
+    owner: "coding-to-music",
+    repo: "docker-flask-mongodb-k8-grafana-mqtt-fastapi",
+  },
+  { owner: "coding-to-music", repo: "k6-influxdb-grafana-docker-load-testing" },
+  { owner: "coding-to-music", repo: "postgres-postgrest-cloudflare-docker" },
+  { owner: "coding-to-music", repo: "facebook-firebase-next-chat" },
+  { owner: "coding-to-music", repo: "chalice-workshop" },
+  { owner: "coding-to-music", repo: "mongoose-mongodb-upload-images" },
+  { owner: "coding-to-music", repo: "nuxt-supabase-full-multi-user-blog" },
+  { owner: "coding-to-music", repo: "battlecode2021" },
   { owner: "coding-to-music", repo: "coding-to-music" },
   { owner: "coding-to-music", repo: "sass-mern-image-uploader" },
   { owner: "coding-to-music", repo: "coding-to-music.github.io" },
