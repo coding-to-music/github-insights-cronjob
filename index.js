@@ -7,7 +7,7 @@ const { getViews } = require("./controllers/views");
 const { getStars } = require("./controllers/stars");
 const { getForks } = require("./controllers/forks");
 
-const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGO_URI;
 
 const connectDB = async () => {
   try {
