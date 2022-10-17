@@ -13,19 +13,18 @@ exports.getViews = async (owner, repo) => {
     console.log("getViews: repo %s", repo);
 
     if (status === 200) {
+      console.log("getViews: data %s ", data);
       const { views } = data;
+      console.log("getViews: views %s ", views);
       const latestData = views[views.length - 1];
       console.log("getViews: latestData %s ", latestData);
-      const shouldUpdate = isLastDay(latestData.timestamp);
-      console.log(
-        "getViews: latestData %s shouldUpdate %s",
-        latestData,
-        shouldUpdate
+
+      const doc = await View.findOneAndUpdate(
+        { name: repo },
+        { $set: { ...latestData } },
+        { upsert: true, new: true }
       );
-      if (shouldUpdate) {
-        await View.create({ name: repo, ...latestData });
-        console.log("getViews: View.create: ", repo);
-      }
+      console.log("getViews: doc: %s", doc);
     } else {
       throw new Error("Error fetching views: ", status);
     }

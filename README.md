@@ -28,6 +28,39 @@ cron job using github actions.
 
 Before start, run `cp .env.local.example .env`.
 
+## Example of how data is retrieved
+
+```
+npm run start
+```
+
+Output:
+
+```
+> github-insights-cronjob@1.0.0 start
+> node index.js
+
+Connecting to MongoDB...
+Connected to MongoDB
+------- started -------
+getViews: repo sass-mern-image-uploader
+getViews: data { count: 12, uniques: 1, views: [Array] }
+getViews: views [ [Object] ]
+getViews: latestData { timestamp: '2022-10-06T00:00:00Z', count: 12, uniques: 1 }
+getViews: doc: {
+  _id: new ObjectId("634dbb70fda60bcbb8023215"),
+  name: 'sass-mern-image-uploader',
+  __v: 0,
+  count: 12,
+  createdAt: 2022-10-17T20:30:40.331Z,
+  timestamp: '2022-10-06T00:00:00Z',
+  uniques: 1,
+  updatedAt: 2022-10-17T20:53:57.753Z
+}
+------- stopped -------
+Disconnected from MongoDB
+```
+
 ## Example queries for the GitHub API
 
 Shell

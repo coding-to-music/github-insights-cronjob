@@ -22,12 +22,10 @@ const connectDB = async () => {
 
 // const jobs = [getClones, getViews, getStars, getForks];
 const jobs = [getViews];
-const repos = [
-  { owner: "coding-to-music", repo: "sass-mern-image-uploader" },
-  { owner: "coding-to-music", repo: "coding-to-music.github.io" },
-];
+const repos = [{ owner: "coding-to-music", repo: "sass-mern-image-uploader" }];
 
 const oldrepos = [
+  { owner: "coding-to-music", repo: "coding-to-music.github.io" },
   { owner: "coding-to-music", repo: "nestjs-prisma-multi-database" },
   {
     owner: "coding-to-music",
@@ -67,7 +65,7 @@ const runCronJob = async () => {
 
 async function main() {
   // 30s
-  const ms = 15 * 1000;
+  const ms = 5 * 1000;
 
   try {
     await runCronJob();
