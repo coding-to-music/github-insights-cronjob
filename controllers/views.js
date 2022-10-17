@@ -10,13 +10,21 @@ exports.getViews = async (owner, repo) => {
       repo
     );
 
+    console.log("getViews: repo %s", repo);
+
     if (status === 200) {
       const { views } = data;
       const latestData = views[views.length - 1];
+      console.log("getViews: latestData %s ", latestData);
       const shouldUpdate = isLastDay(latestData.timestamp);
+      console.log(
+        "getViews: latestData %s shouldUpdate %s",
+        latestData,
+        shouldUpdate
+      );
       if (shouldUpdate) {
         await View.create({ name: repo, ...latestData });
-        console.log("getViews: ", repo);
+        console.log("getViews: View.create: ", repo);
       }
     } else {
       throw new Error("Error fetching views: ", status);
