@@ -20,9 +20,13 @@ const connectDB = async () => {
   }
 };
 
+const jobs = [getClones, getStars, getForks];
 // const jobs = [getClones, getViews, getStars, getForks];
-const jobs = [getViews];
-const repos = [{ owner: "coding-to-music", repo: "sass-mern-image-uploader" }];
+// const jobs = [getViews, getStars];
+const repos = [
+  { owner: "coding-to-music", repo: "sass-mern-image-uploader" },
+  { owner: "coding-to-music", repo: "coding-to-music.github.io" },
+];
 
 const oldrepos = [
   { owner: "coding-to-music", repo: "coding-to-music.github.io" },

@@ -16,11 +16,12 @@ exports.getStars = async (owner, repo) => {
 
       console.log("getStars: ", stars, latestData);
 
-      const shouldUpdate = isLastDay(latestData.timestamp);
-      if (shouldUpdate) {
-        await Star.create({ name: repo, ...latestData });
-        console.log("getStars: ", repo);
-      }
+      const doc = await Star.findOneAndUpdate(
+        { name: repo },
+        { $set: { ...latestData } },
+        { upsert: true, new: true }
+      );
+      console.log("getStars: doc: %s", doc);
     } else {
       throw new Error("Error fetching stars: ", status);
     }

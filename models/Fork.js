@@ -15,10 +15,10 @@ const forkSchema = new Schema(
       type: Number,
       default: 0,
     },
-    uniques: {
-      type: Number,
-      default: 0,
-    },
+    // uniques: {
+    //   type: Number,
+    //   default: 0,
+    // },
   },
   { timestamps: true }
 );
