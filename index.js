@@ -8,6 +8,7 @@ const { getStars } = require("./controllers/stars");
 const { getForks } = require("./controllers/forks");
 
 const uri = process.env.MONGO_URI;
+const code = 1;
 
 const connectDB = async () => {
   try {
@@ -16,6 +17,9 @@ const connectDB = async () => {
     console.log("Connected to MongoDB");
   } catch (error) {
     console.error("Error connecting to MongoDB: ", error.message);
+    process.on("exit", function (code) {
+      return console.log(`About to exit with code ${code}`);
+    });
   }
 };
 

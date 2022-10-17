@@ -12,7 +12,7 @@ https://github.com/softmaple/insights-cronjob
 
 ```java
 const secret = process.env.JWT_SECRET;
-mongoose_1.default.connect(`${process.env.MONGODB_URI
+mongoose_1.default.connect(`${process.env.MONGO_URI
 ```
 
 # insights-cronjob
