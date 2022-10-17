@@ -13,11 +13,11 @@ exports.getViews = async (owner, repo) => {
     console.log("getViews: repo %s", repo);
 
     if (status === 200) {
-      console.log("getViews: data %s ", data);
+      // console.log("getViews: data %s ", data);
       const { views } = data;
-      console.log("getViews: views %s ", views);
+      // console.log("getViews: views %s ", views);
       const latestData = views[views.length - 1];
-      console.log("getViews: latestData %s ", latestData);
+      // console.log("getViews: latestData %s ", latestData);
 
       const doc = await View.findOneAndUpdate(
         { name: repo },
