@@ -4,15 +4,25 @@
 
 https://github.com/coding-to-music/github-insights-cronjob
 
-https://github-insights-cronjob.vercel.app/
-
 by SoftMaple https://github.com/softmaple
 
 https://github.com/softmaple/insights-cronjob
 
 ```java
-const secret = process.env.JWT_SECRET;
-mongoose_1.default.connect(`${process.env.MONGO_URI
+MONGO_URI=
+OCTOKIT_TOKEN=
+```
+
+## GitHub
+
+```java
+git init
+git add .
+git remote remove origin
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:coding-to-music/github-insights-cronjob.git
+git push -u origin main
 ```
 
 # insights-cronjob
